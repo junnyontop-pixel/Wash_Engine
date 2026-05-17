@@ -1,0 +1,128 @@
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* 깊은 밤색 */
+    color: #e0e0e0;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+/* 상단 네비게이션 바 */
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#nav-bar h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #ffffff;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007acc; /* 신뢰감을 주는 파란색 */
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#nav-links a:hover {
+    background-color: #005fa3;
+    transform: translateY(-1px);
+}
+
+#nav-links a:active {
+    transform: translateY(0);
+}
+
+/* 콘텐츠 컨테이너 */
+#content-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 프로젝트 카드 그리드 */
+.contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* 프로젝트 카드 개별 스타일 */
+.project-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #007acc;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.project-card p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* 새 프로젝트 카드 (빈 카드) 스타일링을 원할 경우 */
+.project-card.new-project {
+    border: 2px dashed #444;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.project-card.new-project:hover {
+    border-color: #888;
+}
+
+/* 로고 스타일 추가 */
+#nav-bar img {
+    height: 60px; /* 네비게이션 바 높이에 맞게 조절 */
+    width: auto;
+    object-fit: contain;
+}
+
+/* 제목과 로고를 묶어주기 위한 팁 (선택) */
+#nav-bar {
+    justify-content: flex-start; /* 왼쪽 정렬로 변경하고 링크만 오른쪽으로 밀기 */
+}
+#nav-links {
+    margin-left: auto; /* 링크들을 오른쪽 끝으로 밀어냄 */
+}
